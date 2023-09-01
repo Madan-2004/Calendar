@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calendar</title>
+</head>
+<body>
+    <div class="calendar">
+        <div class="left">
+            <h3 id="date">00</h3>
+            <p id="day">Sunday</p>
+        </div>
+        <div class="right">
+            <h5 id="month">January</h5>
+            <p id="year">2000</p>
+        </div>
+    </div>
+
+    <script>
+        const days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+        const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var now = new Date();
+
+        document.getElementById("date").innerHTML = now.getDate()<10 ? "0"+now.getDate() : now.getDate();
+        document.getElementById("day").innerHTML = days[now.getDay()-1];
+        document.getElementById("month").innerHTML = month[now.getMonth()];
+        document.getElementById("year").innerHTML = now.getFullYear();
+
+
+    </script>
+</body>
+</html>
